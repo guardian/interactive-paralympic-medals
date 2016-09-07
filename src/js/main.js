@@ -25,15 +25,15 @@ function initData(resp){
 
     var data = resp.sheets.Sheet1;
 //console.log("hello");
-   console.log(resp);
-    //console.log(resp.sheets.Sheet1);
+   //console.log(resp);
+    console.log(resp.sheets.Sheet1);
 
 //     scale = d3.scaleSqrt()
 // .domain([0, maxMedalCount])
 // .range([0,8]);
 
 
-    var i, htmlString = '', countryId, goldTotal, silverTotal, bronzeTotal, medalTotal, minMedalCount = 0, maxMedalCount = 0, maxScale = 8, goldScale, silverScale, bronzeScale, position, lastSortTotal = 999999999999;
+    var i, htmlString = '', countryId, goldTotal, silverTotal, bronzeTotal, medalTotal, minMedalCount = 0, maxMedalCount = 0, maxScale = 8, goldScale, silverScale, bronzeScale, position, lastSortTotal = 99999999999999, char0, char1, char2, charCorrect;
 
     for (var i = 0; i < data.length; i++) {
 
@@ -41,7 +41,20 @@ function initData(resp){
         silverTotal = parseInt(data[i].silver);
         bronzeTotal = parseInt(data[i].bronze);
 
-        data[i].sortTotal = bronzeTotal + (silverTotal * 1000) + (goldTotal * 1000000);
+
+        data[i].sortTotal = (bronzeTotal*1000000) + (silverTotal * 1000000000) + (goldTotal * 1000000000000);
+        //data[i].sortTotal = bronzeTotal + (silverTotal * 1000) + (goldTotal * 1000000);
+
+        char0 = data[i].iso.charCodeAt(0) - 65;
+        char1 = data[i].iso.charCodeAt(1) - 65;
+        char2 = data[i].iso.charCodeAt(2) - 65;
+
+        charCorrect = (char0 * 10000) + (char1 * 100) + char2;
+
+        data[i].sortTotal += (1000000 - charCorrect);
+
+        //console.log((10000 - ((char0 * 100) + (char1 * 10) + char2)));
+
 
         if ( goldTotal > maxMedalCount ) {
             maxMedalCount = goldTotal;
