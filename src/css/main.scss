@@ -1,7 +1,7 @@
 @import "fonts";
 @import "palette";
 @import "flags";
-// @import "mq";
+@import "mq";
 // @import "general";
 // @import "share";
 
@@ -11,6 +11,23 @@
     min-height: 60px;
     margin-bottom: 32px;
     padding: 10px;
+    @include mq(leftCol) {
+        padding-left: 180px;
+    }
+}
+
+.om-section__title {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: 900;
+    font-weight: 600;
+    margin: 0 0 6px;
+    @include mq(leftCol) {
+        position: absolute;
+left: 20px;
+width: 140px;
+    }
 }
 
 .om-table {
