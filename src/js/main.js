@@ -24,7 +24,9 @@ export function init(el, context, config, mediator) {
 function initData(resp){
 
     var data = resp.sheets.Sheet1;
-    console.log(resp.sheets.Sheet1);
+//console.log("hello");
+   console.log(resp);
+    //console.log(resp.sheets.Sheet1);
 
 //     scale = d3.scaleSqrt()
 // .domain([0, maxMedalCount])
