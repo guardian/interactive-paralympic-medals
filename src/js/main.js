@@ -51,6 +51,8 @@ function initData(resp){
 
         charCorrect = (char0 * 10000) + (char1 * 100) + char2;
 
+        data[i].positionTotal = data[i].sortTotal;
+
         data[i].sortTotal += (1000000 - charCorrect);
 
         //console.log((10000 - ((char0 * 100) + (char1 * 10) + char2)));
@@ -106,9 +108,9 @@ position = 0;
             bronzeScale = 0;
         }
 
-        if ( data[i].sortTotal < lastSortTotal) {
+        if ( data[i].positionTotal < lastSortTotal) {
             position ++;
-            lastSortTotal = data[i].sortTotal;
+            lastSortTotal = data[i].positiontTotal;
         }
 
         // console.log(data[i].sortTotal);
