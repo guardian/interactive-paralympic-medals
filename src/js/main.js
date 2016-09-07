@@ -8,7 +8,7 @@ export function init(el, context, config, mediator) {
     el.innerHTML = mainHTML.replace(/%assetPath%/g, config.assetPath);
 
     reqwest({
-        url: 'https://interactive.guim.co.uk/docsdata-test/1bZnrqdBqM1jFuC-iBpOV-_lC8eE2uwb1g1Z3FTy6UJA.json',
+        url: 'https://interactive.guim.co.uk/docsdata/1bZnrqdBqM1jFuC-iBpOV-_lC8eE2uwb1g1Z3FTy6UJA.json',
         type: 'json',
         crossOrigin: true,
         success: (resp) => initData(resp)

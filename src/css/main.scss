@@ -1,5 +1,148 @@
 @import "fonts";
 @import "palette";
-@import "mq";
-@import "general";
-@import "share";
+// @import "mq";
+// @import "general";
+// @import "share";
+
+.om-section {
+    position: relative;
+    max-width: 660px;
+    min-height: 60px;
+    margin-bottom: 32px;
+    padding: 10px;
+}
+
+.om-table {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    list-style-type: none;
+    margin: 32px 0 0 0;
+    padding: 0;
+}
+
+.om-table-row {
+    margin: 24px 0;
+    padding-left: 100px;
+    padding-right: 20px;
+    position: relative;
+    padding-bottom:20px;
+}
+
+.om-table-row::before {
+    border-top: 1px solid #ccc;
+    content: '';
+    margin: 0 auto;
+    position: absolute;
+    // top: 50%;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.om-table-left-area {
+    position: absolute;
+    left: 0;
+    background-color: white;
+}
+
+.om-table-row__position {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: normal;
+    display: inline-block;
+    text-align: right;
+    padding-right: 8px;
+    width: 20px;
+    min-height: 12px;
+    float: left;
+}
+
+.om-table-row__flag {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.om-flag {
+    background-image: url(./assets/imgs/flags.png);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #dcdcdc;
+}
+
+.om-table-row__country {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: normal;
+    display: inline-block;
+    width: 32px;
+    padding: 0 6px 0 4px;
+}
+
+.om-table-row__medal {
+    float: left;
+    width: 30%;
+    position: relative;
+    text-align: center;
+}
+
+.om-table-row-medal__first {
+    margin-left: 5%;
+}
+
+.om-table-row__total {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+    padding-left: 6px;
+    background-color: white;
+}
+
+.om-medal-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 500px;
+    display: block;
+    position: absolute;
+    margin: -4px 0 0 -4px;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+}
+
+.om-medal-label {
+    margin: auto;
+    position: relative;
+}
+
+.om-medal-white {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    z-index: 0;
+    position: absolute;
+    margin: -4px 0 0 -4px;
+    left: 50%;
+    top: 50%;
+}
+
+.om-medal-circle--gold {
+    background-color: rgba(250,220,2,0.2);
+}
+
+.om-medal-circle--silver {
+    background-color: rgba(217,217,217,0.4);
+}
+
+.om-medal-circle--bronze {
+    background-color: rgba(243,111,33,0.2);
+}
