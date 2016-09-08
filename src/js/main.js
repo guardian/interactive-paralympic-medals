@@ -24,10 +24,9 @@ export function init(el, context, config, mediator) {
 function initData(resp){
 
     var data = resp.sheets.Sheet1;
-//console.log("hello");
-   //console.log(resp);
-    console.log(resp.sheets.Sheet1);
-
+    var timestamp = resp.sheets.Sheet2[0]["Last updated"];
+   
+    
 //     scale = d3.scaleSqrt()
 // .domain([0, maxMedalCount])
 // .range([0,8]);
@@ -92,9 +91,10 @@ position = 0;
         bronzeTotal = parseInt(data[i].bronze);
         medalTotal = goldTotal + silverTotal + bronzeTotal;
 
-        goldScale = goldTotal / maxMedalCount * maxScale;
-        silverScale = silverTotal / maxMedalCount * maxScale;
-        bronzeScale = bronzeTotal / maxMedalCount * maxScale;
+        goldScale = Math.sqrt(goldTotal / maxMedalCount) * maxScale;
+        silverScale = Math.sqrt(silverTotal / maxMedalCount) * maxScale;
+        bronzeScale = Math.sqrt(bronzeTotal / maxMedalCount) * maxScale;
+
 
         if (isNaN(goldScale)) {
             goldScale = 0;
@@ -143,6 +143,9 @@ position = 0;
 
     var medalTable = document.getElementById("pm-table");
     medalTable.innerHTML = htmlString;
+
+    var timeStampEl = document.getElementById("om-timestamp");
+    timeStampEl.innerHTML = timestamp;
 
 
 
