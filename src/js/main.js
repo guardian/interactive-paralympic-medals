@@ -32,7 +32,7 @@ function initData(resp){
 // .range([0,8]);
 
 
-    var i, htmlString = '', countryId, goldTotal, silverTotal, bronzeTotal, medalTotal, minMedalCount = 0, maxMedalCount = 0, maxScale = 8, goldScale, silverScale, bronzeScale, position, lastSortTotal = 99999999999999, char0, char1, char2, charCorrect;
+    var i, htmlString = '', countryId, goldTotal, silverTotal, bronzeTotal, medalTotal, minMedalCount = 0, maxMedalCount = 0, maxScale = 8, goldScale, silverScale, bronzeScale, position, lastSortTotal = 9999999999999999, char0, char1, char2, charCorrect;
 
     for (var i = 0; i < data.length; i++) {
 
@@ -109,8 +109,8 @@ position = 0;
         }
 
         if ( data[i].positionTotal < lastSortTotal) {
-            position ++;
-            lastSortTotal = data[i].positiontTotal;
+            position = i+1;
+            lastSortTotal = data[i].positionTotal;
         }
 
         // console.log(data[i].sortTotal);

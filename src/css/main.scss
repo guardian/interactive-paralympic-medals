@@ -5,6 +5,11 @@
 // @import "general";
 // @import "share";
 
+.prose .om-section ol>li::before {
+    content: "";
+    // counter-increment: li;
+}
+
 .om-section {
     position: relative;
     max-width: 660px;
@@ -16,6 +21,11 @@
     }
     @include mq(wide) {
         padding-left: 240px;
+    }
+
+    ol, li {
+        list-style-type: none!important;
+        list-style: none!important;
     }
 }
 
@@ -40,6 +50,9 @@
    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     font-weight: 300;
     margin: 0 0 6px;
+    padding-bottom: 12px;
+    
+   
 //     @include mq(leftCol) {
 //         position: absolute;
 // left: 20px;
@@ -51,7 +64,8 @@
     font-size: 14px;
     line-height: 20px;
     font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-    list-style-type: none;
+    list-style-type: none!important;
+     list-style: none!important;
     margin: 32px 0 0 0;
     padding: 0;
 }
@@ -62,6 +76,8 @@
     padding-right: 20px;
     position: relative;
     padding-bottom:20px;
+    list-style-type: none!important;
+     list-style: none!important;
 }
 
 .om-table-row::before {
